@@ -23,6 +23,7 @@ def test_cross_validation():
     assert std_score >= 0
     assert np.isclose(0.95, mean_score)
     assert np.isclose(0.044, std_score, atol=1e-3)
+    
     # Test LOO CV
     mean_score_loo, std_score_loo = cross_validation(model, X, y, nFolds=-1)
     assert isinstance(mean_score_loo, float)
